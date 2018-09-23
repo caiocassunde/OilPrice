@@ -1,5 +1,6 @@
 package br.com.caiosabino.oilprice;
 
+import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.SeekBar;
@@ -9,30 +10,31 @@ import java.text.NumberFormat;
 
 public class MainActivity extends AppCompatActivity {
     private NumberFormat currencyFormat = NumberFormat.getCurrencyInstance();
-    private TextView gasolineTextView;
     private TextView priceGasolineTextView;
-    private TextView ethanolTextView;
     private TextView priceEthanolTextView;
-    private double price = 2.5;
+    private TextView resultTextView;
+    private double priceGasoline = 2.5;
+    private double priceEthanol = 2.5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        gasolineTextView = findViewById(R.id.gasolineTextView);
         priceGasolineTextView = findViewById(R.id.priceGasolineTextView);
-        ethanolTextView = findViewById(R.id.ethanolTextView);
         priceEthanolTextView = findViewById(R.id.priceEthanolTextView);
-        priceGasolineTextView.setText(currencyFormat.format(price));
-        priceEthanolTextView.setText(currencyFormat.format(price));
-        SeekBar gasolineSeekBar = findViewById(R.id.gasolineSeekBar);
+        resultTextView = findViewById(R.id.resultTextView);
+        priceGasolineTextView.setText(currencyFormat.format(priceGasoline));
+        priceEthanolTextView.setText(currencyFormat.format(priceEthanol));
+
+        final SeekBar gasolineSeekBar = findViewById(R.id.gasolineSeekBar);
+        final SeekBar ethanolSeekBar = findViewById(R.id.ethanolSeekBar);
         gasolineSeekBar.setOnSeekBarChangeListener(
                 new SeekBar.OnSeekBarChangeListener() {
                     @Override
                     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                        price = progress / 100.;
-                        String valorFormatado = currencyFormat.format(price);
-                        priceGasolineTextView.setText(valorFormatado);
+                        priceGasoline = progress / 100.;
+                        String valorFormatadoGasoline = currencyFormat.format(priceGasoline);
+                        priceGasolineTextView.setText(valorFormatadoGasoline);
                     }
 
                     @Override
@@ -46,14 +48,13 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
         );
-        SeekBar ethanolSeekBar = findViewById(R.id.ethanolSeekBar);
         ethanolSeekBar.setOnSeekBarChangeListener(
                 new SeekBar.OnSeekBarChangeListener() {
                     @Override
                     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                        price = progress / 100.;
-                        String valorFormatado = currencyFormat.format(price);
-                        priceEthanolTextView.setText(valorFormatado);
+                        priceEthanol = progress / 100.;
+                        String valorFormatadoEthanol = currencyFormat.format(priceEthanol);
+                        priceEthanolTextView.setText(valorFormatadoEthanol);
                     }
 
                     @Override
@@ -67,5 +68,8 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
         );
+        if(!(priceEthanol / priceGasoline >= 0.7)){
+            resultTextView.setText("Ethanol");
+        }
     }
 }

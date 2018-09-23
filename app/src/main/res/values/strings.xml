@@ -1,9 +1,11 @@
 <resources>
     <string name="app_name">Oil Price</string>
-    <string name="gasoline">Price of the Liter of Gasoline</string>
-    <string name="ethanol">Price of the Liter of Ethanol</string>
+    <string name="gasolineText">Price of the Liter of Gasoline</string>
+    <string name="ethanolText">Price of the Liter of Ethanol</string>
     <string name="priceGasoline">$2,50</string>
     <string name="priceEthanol">$2,50</string>
-    <string name="text">It's better to use...</string>
+    <string name="text">Is better to use...</string>
+    <string name="gasoline">Gasoline</string>
+    <string name="ethanol">Ethanol</string>
     <string name="oil">oil</string>
 </resources>
