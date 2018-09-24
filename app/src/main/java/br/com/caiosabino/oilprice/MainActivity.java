@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
     private NumberFormat currencyFormat = NumberFormat.getCurrencyInstance();
     private TextView priceGasolineTextView;
     private TextView priceEthanolTextView;
-    private TextView resultTextView;
+    //private TextView resultTextView;
     private double priceGasoline = 2.5;
     private double priceEthanol = 2.5;
 
@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         priceGasolineTextView = findViewById(R.id.priceGasolineTextView);
         priceEthanolTextView = findViewById(R.id.priceEthanolTextView);
-        resultTextView = findViewById(R.id.resultTextView);
+        //resultTextView = findViewById(R.id.resultTextView);
         priceGasolineTextView.setText(currencyFormat.format(priceGasoline));
         priceEthanolTextView.setText(currencyFormat.format(priceEthanol));
 
@@ -68,8 +68,8 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
         );
-        if(!(priceEthanol / priceGasoline >= 0.7)){
+        /*if(!(priceEthanol / priceGasoline >= 0.7)){
             resultTextView.setText("Ethanol");
-        }
+        }*/
     }
 }
