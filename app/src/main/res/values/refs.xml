@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <drawable name="imageOil">@drawable/gasoline_english</drawable>
+    <drawable name="gasolineImage">@drawable/gasoline_english</drawable>
+    <drawable name="ethanolImage">@drawable/ethanol_english</drawable>
 </resources>
