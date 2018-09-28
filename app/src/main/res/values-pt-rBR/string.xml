@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Preço do Combustível</string>
+    <string name="gasolineText">Preço do Litro da Gasolina</string>
+    <string name="ethanolText">Preço do litro do Etanol</string>
+    <string name="priceGasoline">$2,50</string>
+    <string name="priceEthanol">$2,50</string>
+    <string name="text">É melhor usar...</string>
+    <string name="gasoline">Gasolina</string>
+    <string name="ethanol">Etanol</string>
+    <string name="oil">Combustível</string>
+</resources>

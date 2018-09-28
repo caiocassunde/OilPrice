@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">油价</string>
+    <string name="gasolineText">汽油升的价格</string>
+    <string name="ethanolText">乙醇的价格</string>
+    <string name="priceGasoline">$2,50</string>
+    <string name="priceEthanol">$2,50</string>
+    <string name="text">最好用...</string>
+    <string name="gasoline">汽油</string>
+    <string name="ethanol">乙醇</string>
+    <string name="oil">油</string>
+</resources>
