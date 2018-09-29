@@ -18,8 +18,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView priceEthanolTextView;
     private TextView resultTextView;
     private ImageView oilImageView;
-    private double priceGasoline = 2.5;
-    private double priceEthanol = 2.5;
+    private double priceGasoline;
+    private double priceEthanol;
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -38,6 +38,12 @@ public class MainActivity extends AppCompatActivity {
         final SeekBar gasolineSeekBar = findViewById(R.id.gasolineSeekBar);
         final SeekBar ethanolSeekBar = findViewById(R.id.ethanolSeekBar);
 
+        priceGasoline = gasolineSeekBar.getProgress()/100.;
+        priceEthanol = ethanolSeekBar.getProgress()/100.;
+
+        priceGasolineTextView.setText(currencyFormat.format(priceGasoline));
+        priceEthanolTextView.setText(currencyFormat.format(priceEthanol));
+
         Dinamic dinamic = new Dinamic();
         dinamic.changeImageAndText(priceEthanol, priceGasoline);
 
@@ -45,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
                 new SeekBar.OnSeekBarChangeListener() {
                     @Override
                     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                        priceGasoline = progress / 100.;
+                        priceGasoline = progress/100.;
                         String formattedValueGasoline = currencyFormat.format(priceGasoline);
                         priceGasolineTextView.setText(formattedValueGasoline);
                         Dinamic dinamic = new Dinamic();
@@ -67,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
                 new SeekBar.OnSeekBarChangeListener() {
                     @Override
                     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                        priceEthanol = progress / 100.;
+                        priceEthanol = progress/100.;
                         String formattedValueGasoline = currencyFormat.format(priceEthanol);
                         priceEthanolTextView.setText(formattedValueGasoline);
                         Dinamic dinamic = new Dinamic();
